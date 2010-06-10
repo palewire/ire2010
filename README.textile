@@ -165,7 +165,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
     return HttpResponse('<?xml version=\"1.0\"?><cross-domain-policy><allow-access-from domain=\"*\" /></cross-domain-policy>', mimetype="text/xml")</code></pre>
 
 *27. create a detail.html templates where it all happens*
-<pre><code>
+<pre>
 <div align="center" class="left">
     <object type="application/x-shockwave-flash" data="/local-media/voteinator.swf" width="592" height="333">
         <param name="movie" value="/local-media/voteinator.swf"/>
@@ -177,7 +177,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
         <embed src="/local-media/voteinator.swf" FlashVars="xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&post_path=http://localhost:8000/polls/{{ project.id }}/vote/" bgcolor="#FFFFFF" width="592" height="333" wmode="opaque" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash"></embed>
     </object>
 </div>
-</code></pre>
+</pre>
 
 *28. Download votinator.swf and put in in the "media" directory*
 <pre><code>http://github.com/downloads/palewire/ire2010/voteinator.swf</code></pre>
