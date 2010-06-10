@@ -175,8 +175,8 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
         <param name="wmode" value="opaque"/>
         <embed src="/local-media/voteinator.swf" FlashVars="xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&post_path=http://localhost:8000/polls/{{ project.id }}/vote/" bgcolor="#FFFFFF" width="592" height="333" wmode="opaque" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash"></embed>
     </object>
-</div></code></pre>
-
+</div>
+</code></pre>
 
 *28. Download votinator.swf and put in in the "media" directory*
 <pre><code>http://github.com/downloads/palewire/ire2010/voteinator.swf</code></pre>
