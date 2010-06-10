@@ -164,7 +164,33 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
 <pre><code>def crossdomain(request):
     return HttpResponse('<?xml version=\"1.0\"?><cross-domain-policy><allow-access-from domain=\"*\" /></cross-domain-policy>', mimetype="text/xml")</code></pre>
 
-*27. extra credit... it votes up, but not down. how to fix?*
+*27. create a detail.html templates where it all happens*
+<pre><code><html>
+<head>
+    <title>
+        The Voteinator
+    </title>
+</head>
+<body>
+    
+<div align="center" class="left">
+    <object type="application/x-shockwave-flash" data="/local-media/voteinator.swf" width="592" height="333">
+        <param name="movie" value="/local-media/voteinator.swf"/>
+        <param name="FlashVars" value="xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&post_path=http://localhost:8000/polls/{{ project.id }}/vote/"/>
+        <param name="bgcolor" value="#FFFFFF"/>
+        <param name="allowScriptAccess" value="always"/>
+        <param name="allowFullScreen" value="true"/>
+        <param name="wmode" value="opaque"/>
+        <embed src="/local-media/voteinator.swf" FlashVars="xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&post_path=http://localhost:8000/polls/{{ project.id }}/vote/" bgcolor="#FFFFFF" width="592" height="333" wmode="opaque" allowScriptAccess="always" allowFullScreen="true" type="application/x-shockwave-flash"></embed>
+    </object>
+</div>
+    
+</body>
+
+</html></code></pre>
+
+
+*28. extra credit... it votes up, but not down. how to fix?*
 
 <pre><code>def vote(request, poll_id):
     p = get_object_or_404(Project, pk=poll_id)
@@ -177,7 +203,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
     return HttpResponse(status=200)</code></pre>
 
 
-*28. create a test.py script*
+*29. create a test.py script*
 
 <pre><code>import sys, urllib2, urllib
 
