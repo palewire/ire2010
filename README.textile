@@ -165,7 +165,8 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
     return HttpResponse('<?xml version=\"1.0\"?><cross-domain-policy><allow-access-from domain=\"*\" /></cross-domain-policy>', mimetype="text/xml")</code></pre>
 
 *27. create a detail.html templates where it all happens*
-<pre><code><div align="center" class="left">
+<pre><code>
+<div align="center" class="left">
     <object type="application/x-shockwave-flash" data="/local-media/voteinator.swf" width="592" height="333">
         <param name="movie" value="/local-media/voteinator.swf"/>
         <param name="FlashVars" value="xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&post_path=http://localhost:8000/polls/{{ project.id }}/vote/"/>
