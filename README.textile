@@ -165,8 +165,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
     return HttpResponse('<?xml version=\"1.0\"?><cross-domain-policy><allow-access-from domain=\"*\" /></cross-domain-policy>', mimetype="text/xml")</code></pre>
 
 *27. create a detail.html templates where it all happens*
-<pre><code>
-&lt;div align=&quot;center&quot; class=&quot;left&quot;&gt;
+<pre>&lt;div align=&quot;center&quot; class=&quot;left&quot;&gt;
     &lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;/local-media/voteinator.swf&quot; width=&quot;592&quot; height=&quot;333&quot;&gt;
         &lt;param name=&quot;movie&quot; value=&quot;/local-media/voteinator.swf&quot;/&gt;
         &lt;param name=&quot;FlashVars&quot; value=&quot;xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&amp;post_path=http://localhost:8000/polls/{{ project.id }}/vote/&quot;/&gt;
@@ -177,7 +176,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
         &lt;embed src=&quot;/local-media/voteinator.swf&quot; FlashVars=&quot;xml_path=http://localhost:8000/polls/{{ project.id }}/data.xml&amp;post_path=http://localhost:8000/polls/{{ project.id }}/vote/&quot; bgcolor=&quot;#FFFFFF&quot; width=&quot;592&quot; height=&quot;333&quot; wmode=&quot;opaque&quot; allowScriptAccess=&quot;always&quot; allowFullScreen=&quot;true&quot; type=&quot;application/x-shockwave-flash&quot;&gt;&lt;/embed&gt;
     &lt;/object&gt;
 &lt;/div&gt;
-</code></pre>
+</pre>
 
 *28. Download votinator.swf and put in in the "media" directory*
 <pre><code>http://github.com/downloads/palewire/ire2010/voteinator.swf</code></pre>
