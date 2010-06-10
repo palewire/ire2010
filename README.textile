@@ -84,7 +84,7 @@ admin.site.register(Vote)</code></pre>
 (r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
 (r'^polls/(?P<poll_id>\d+)/data.xml$', 'polls.views.data'),
 (r'^crossdomain.xml$', 'polls.views.crossdomain'),
-(r'^pages/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_DOC_ROOT }),</code></pre>
+(r'^local-media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_DOC_ROOT }),</code></pre>
 
 *16. create a view. in views.py*
 
