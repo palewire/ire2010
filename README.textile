@@ -164,7 +164,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
 <pre><code>def crossdomain(request):
     return HttpResponse('<?xml version=\"1.0\"?><cross-domain-policy><allow-access-from domain=\"*\" /></cross-domain-policy>', mimetype="text/xml")</code></pre>
 
-*27. create a detail.html templates where it all happens*
+*27. create a detail.html template where it all comes together*
 <pre>&lt;div align=&quot;center&quot; class=&quot;left&quot;&gt;
     &lt;object type=&quot;application/x-shockwave-flash&quot; data=&quot;/local-media/voteinator.swf&quot; width=&quot;592&quot; height=&quot;333&quot;&gt;
         &lt;param name=&quot;movie&quot; value=&quot;/local-media/voteinator.swf&quot;/&gt;
