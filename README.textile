@@ -4,7 +4,7 @@ A guide, by "Aron Pilhofer":http://github.com/pilhofer.
 
 *01. Create your Django project*
 
-<pre><code>django-admin.py startproject ona</code></pre>
+<pre><code>django-admin.py startproject ire2010</code></pre>
 
 *02. Test it*
 
@@ -28,12 +28,11 @@ A guide, by "Aron Pilhofer":http://github.com/pilhofer.
 class Vote(models.Model):
     project = models.ForeignKey(Project)
     choice = models.IntegerField()
-    #category = models.CharField(max_length=200)
-    #user_ip = models.CharField(max_length=200)</code></pre>
+    </code></pre>
 
 *06. add line to settings.py as an installed app*
 
-<pre><code>'ona.polls',</code></pre>
+<pre><code>'polls',</code></pre>
 
 *07. sync your db*
 
@@ -67,24 +66,24 @@ admin.autodiscover()</code></pre>
 
 *13. add your app to the admin. create a file called admin.py in your project (make joke about conventions), and add:*
 
-<pre><code>from ona.polls.models import Project
+<pre><code>from polls.models import Project
 from django.contrib import admin
 
 admin.site.register(Project)</code></pre>
 
 *14. add vote to the admin.py file so we can see associations*
 
-<pre><code>from ona.polls.models import Vote
+<pre><code>from polls.models import Vote
 admin.site.register(Vote)</code></pre>
 
 *15. Add the urls we need for the rest of our app urls.py*
 
 <pre><code>(r'^admin/', include(admin.site.urls)),
-(r'^polls/$', 'ona.polls.views.index'),
-(r'^polls/(?P<poll_id>\d+)/$', 'ona.polls.views.detail'),
-(r'^polls/(?P<poll_id>\d+)/vote/$', 'ona.polls.views.vote'),
-(r'^polls/(?P<poll_id>\d+)/data.xml$', 'ona.polls.views.data'),
-(r'^crossdomain.xml$', 'ona.polls.views.crossdomain'),
+(r'^polls/$', 'polls.views.index'),
+(r'^polls/(?P<poll_id>\d+)/$', 'polls.views.detail'),
+(r'^polls/(?P<poll_id>\d+)/vote/$', 'polls.views.vote'),
+(r'^polls/(?P<poll_id>\d+)/data.xml$', 'polls.views.data'),
+(r'^crossdomain.xml$', 'polls.views.crossdomain'),
 (r'^pages/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_DOC_ROOT }),</code></pre>
 
 *16. create a view. in views.py*
@@ -102,7 +101,7 @@ def index(request):
 *18. Add a bunch of stuff up at the top of views.py we will need later*
 
 <pre><code>from django.shortcuts import get_object_or_404, render_to_response
-from ona.polls.models import Project, Vote
+from polls.models import Project, Vote
 from django.http import HttpResponseRedirect, HttpResponse
 from django.core.urlresolvers import reverse
 from django.db.models import Sum</code></pre>
