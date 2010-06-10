@@ -190,7 +190,10 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
 </html></code></pre>
 
 
-*28. extra credit... it votes up, but not down. how to fix?*
+*28. Download votinator.swf and put in in the "media" directory*
+<pre><code>http://github.com/downloads/palewire/ire2010/voteinator.swf</code></pre>
+
+*29. extra credit... it votes up, but not down. how to fix?*
 
 <pre><code>def vote(request, poll_id):
     p = get_object_or_404(Project, pk=poll_id)
@@ -203,7 +206,7 @@ STATIC_DOC_ROOT = "/Path/to/your/stuff"</code></pre>
     return HttpResponse(status=200)</code></pre>
 
 
-*29. create a test.py script*
+*30. create a test.py script*
 
 <pre><code>import sys, urllib2, urllib
 
